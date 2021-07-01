@@ -20,7 +20,7 @@ jobs:
     needs: ["run-shell-command"]
     steps:
       - name: Directory
-      PowerShell
+        PowerShell
         run: Get-Location
       - name: Directory Bash
         run: pwd  
