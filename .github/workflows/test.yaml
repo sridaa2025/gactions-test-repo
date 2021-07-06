@@ -7,5 +7,5 @@ jobs:
       - name: Simple JS Action
         id: greettest
         uses: ./.github/actions/version-6
-      - name: Log Greeting Time
+      - name: Log Time
         run: echo "${{ steps.greettest.outputs.time }}"   
