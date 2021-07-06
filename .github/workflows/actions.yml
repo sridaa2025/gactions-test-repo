@@ -6,9 +6,8 @@ jobs:
     steps:
       - name: Simple JS Action
         id: greet
-        uses: actions/version-6@v1
+        uses: actions/gactions-test-repo@v1
         with:
           who-to-greet: John
       - name: Log Greeting Time
-        run: echo "${{ steps.greet.outputs.time }}"
-        
+        run: echo "${{ steps.greet.outputs.time }}"        
