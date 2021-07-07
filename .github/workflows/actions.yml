@@ -9,37 +9,22 @@ on: [push]
 jobs:
 
   run-simple-github-actions:
-
     runs-on: ubuntu-latest
-
     steps:
-
       - name: List Files
-
         run: |
-
           pwd
-
           ls -a
-
           echo $GITHUB_SHA
-
           echo $GITHUB_REPOSITORY
-
           echo $GITHUB_WORKSPACE
-
-          echo "{{github.token}}"
-
-
-
+          echo "${{github.token}}"
       - name: Checkout
-
         uses: actions/checkout@v2.3.4
-
       - name: Simple JS Action
-        id: greet1
+        id: greet
         uses: actions/hello-world-javascript-action@v2.3.4
         with:
           who-to-greet: John
       - name: Log Greeting Time
-        run: echo "${{ steps.greet1.outputs.time }}"
+        run: echo "${{ steps.greet.outputs.time }}"
