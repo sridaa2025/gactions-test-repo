@@ -2,7 +2,7 @@ name: Actions workflow New
 
 
 
-on: [push]
+on: [push, pull_request]
 
 
 
