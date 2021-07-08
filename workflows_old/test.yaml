@@ -1,0 +1,12 @@
+name: Actions Test Workflow
+on: [push]
+jobs:
+  run-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simple JS Action
+        id: greettest
+        uses: ./.github/actions/version-6
+        with 
+      - name: Log Time
+        run: echo "${{ steps.greettest.outputs.time }}"   
