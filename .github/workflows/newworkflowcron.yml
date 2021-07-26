@@ -1,13 +1,7 @@
-name: Actions workflow New
-
-
-
+name: Actions workflow cron
 on: 
   schedule:
-    - cron:  '0/5 * * * *' 
-
-
-
+    - cron:  '0/5 * * * *'
 jobs:
 
   run-simple-github-actions:
