@@ -5,9 +5,12 @@ on:
 #  schedule:
 #    - cron:  '0/5 * * * *'
 jobs:
+
   run-simple-github-actions:
     runs-on: ubuntu-latest
     steps:
+      - name: payload
+        run: echo {{ github.event.client_payload }}
       - name: List Files
         run: |
           pwd
