@@ -4,13 +4,15 @@ on:
     types: [build]
 #  schedule:
 #    - cron:  '0/5 * * * *'
+  pull_request:
+    types: [closed, assigned, opened, reopened]
 jobs:
 
   run-simple-github-actions:
     runs-on: ubuntu-latest
     steps:
       - name: payload
-        run: echo {{ github.event.client_payload }}
+        run: echo {{ github.event.client_payload.env }}
       - name: List Files
         run: |
           pwd
