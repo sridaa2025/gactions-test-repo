@@ -1,4 +1,4 @@
-name: Actions workflow cron
+name: Actions workflow payload
 on: 
   repository_dispatch:
     types: [build]
@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: payload
         run: echo {{ github.event.client_payload.env }}
-      - name: List File
+      - name: List Files
         run: |
           pwd
           ls -a
